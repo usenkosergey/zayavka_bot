@@ -23,14 +23,14 @@ public class TelegramBotConfig {
 
     @PostConstruct
     public void start() throws TelegramApiException {
-        TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class); // используем class, а не объект
+        TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
         session = botsApi.registerBot(telegramMailBot);
     }
 
     @PreDestroy
     public void shutdown() {
         if (session != null) {
-            session.stop(); // корректно завершаем getUpdates
+            session.stop();
         }
     }
 }

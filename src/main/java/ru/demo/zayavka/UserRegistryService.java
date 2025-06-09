@@ -36,7 +36,7 @@ public class UserRegistryService implements ServletContextAware {
         String appRoot = servletContext.getRealPath("/");
         Path appPath = Paths.get(appRoot);
         Path webappsPath = appPath.getParent();
-        USER_FILE_PATH = webappsPath.resolve("zayavka_bot_users.txt");
+        USER_FILE_PATH = webappsPath.resolve("mailbot_users.txt");
     }
 
     public synchronized void registerUser(Long chatId) {
